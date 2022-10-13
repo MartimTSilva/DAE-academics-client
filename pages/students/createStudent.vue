@@ -1,18 +1,18 @@
 <template>
-    <form @submit.prevent="create">
+    <form @submit.prevent="create" class="p-3">
         <div>
             username: <input v-model="username" type="text">
         </div>
-        <div>
+        <div class="pt-2">
             password: <input v-model="password" type="password">
         </div>
-        <div>
+        <div class="pt-2">
             name: <input v-model="name" type="text">
         </div>
-        <div>
+        <div class="pt-2">
             email: <input v-model="email" type="email">
         </div>
-        <div>
+        <div class="pt-2">
             course code:
             <select v-model="courseCode">
                 <template v-for="course in courses">
@@ -22,7 +22,8 @@
                 </template>
             </select>
         </div>
-        <nuxt-link to="/">Return</nuxt-link>
+        <br>
+        <nuxt-link to="/students">Return</nuxt-link>
         <button type="reset">RESET</button>
         <button @click.prevent="create">CREATE</button>
     </form>
@@ -39,6 +40,7 @@ export default {
             courses: []
         }
     },
+    
     created() {
         this.$axios.$get('/api/courses')
             .then(courses => {
@@ -57,7 +59,7 @@ export default {
                 courseCode: this.courseCode
             })
                 .then(() => {
-                    this.$router.push('/')
+                    this.$router.push('/students')
                 })
         }
     }
