@@ -38,6 +38,7 @@ export default {
     'bootstrap-vue/nuxt',
     // if you enabled axios module upon the app generation
     '@nuxtjs/axios',
+    '@nuxtjs/toast'
   ],
 
   axios: {

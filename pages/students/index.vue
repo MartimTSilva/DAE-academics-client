@@ -5,6 +5,7 @@
     <b-table striped over :items="students" :fields="fields">
       <template v-slot:cell(actions)="row">
         <nuxt-link class="btn btn-link pt-0" :to="`/students/${row.item.username}`">Details</nuxt-link>
+        <nuxt-link :to="`/students/${row.item.username}/send-email`">Send email</nuxt-link>
       </template>
     </b-table>
     <nuxt-link to="/" class="btn btn-link">Back</nuxt-link>
